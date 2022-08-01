@@ -62,3 +62,9 @@ Password is *123*
 Docker compose also run containers with phpMyAdmin (available on port 8080) and
 phpRedisAdmin (on port 8081).
 
+
+###
+#### Demo
+_____
+
+http://162.55.161.94/area3

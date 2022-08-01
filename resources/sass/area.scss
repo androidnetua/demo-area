@@ -1,0 +1,30 @@
+$font-size-base: 0.9rem;
+
+$accordion-icon-color: #333333;
+$accordion-icon-active-color: $accordion-icon-color;
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.collapse-menu{
+    display: flex;
+}
+.collapse-menu::after{
+    flex-shrink: 0;
+    width: 0.9rem;
+    content: "";
+    margin-left: auto;
+    background-repeat: no-repeat;
+    background-size: 0.9rem;
+    background-position: center;
+}
+.collapse-menu.collapsed::after {
+    background-image: escape-svg($accordion-button-active-icon);
+}
+.collapse-menu:not(.collapsed)::after {
+    background-image: escape-svg($accordion-button-active-icon);
+    transform: rotate(-180deg);
+}
+.collapse-menu::after {
+    transition: $accordion-icon-transition;
+}

@@ -3,7 +3,7 @@ import store from "../../store";
 const toaster = {
     install(app, options){
         const api = {
-            show: (toast) => {
+            show: function (toast) {
                 if (toast.timeout === undefined || !toast.timeout)
                     toast.timeout = options.timeout
 
@@ -13,26 +13,26 @@ const toaster = {
                 store.commit('toasts/pushToast', toast)
             },
 
-            success: (message) => {
-                api.show({
+            success: function (message) {
+                this.show({
                     message: message,
                     type: 'success'
                 })
             },
-            info: (message) => {
-                api.show({
+            info: function (message) {
+                this.show({
                     message: message,
                     type: 'info'
                 })
             },
-            warning: (message) => {
-                api.show({
+            warning: function (message) {
+                this.show({
                     message: message,
                     type: 'warning'
                 })
             },
-            danger: (message) => {
-                api.show({
+            danger: function (message) {
+                this.show({
                     message: message,
                     type: 'danger'
                 })
